@@ -5,10 +5,12 @@
 	"scripts": {
 		"dev": "vite dev --host 0.0.0.0",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"deploy": "npm run build && npx gh-pages -d build -t true"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-static": "^3.0.6",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"autoprefixer": "^10.4.20",
