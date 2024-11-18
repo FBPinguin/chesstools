@@ -1,1 +1,0 @@
-import{l as o,E as p,n as f,m as i,o as c,p as d,v as h}from"./runtime.Dt2x7lAe.js";function v(s,e,...t){var r=s,n=f,a;o(()=>{n!==(n=e())&&(a&&(c(a),a=null),a=i(()=>n(r,...t)))},p),d&&(r=h)}export{v as s};

@@ -1,1 +1,0 @@
-import{j as t,k as S,f as h,S as q,q as T}from"./runtime.Dt2x7lAe.js";function k(r,f){return r===f||(r==null?void 0:r[q])===f}function x(r={},f,a,c){return t(()=>{var i,s;return S(()=>{i=s,s=[],h(()=>{r!==a(...s)&&(f(r,...s),i&&k(a(...i),r)&&f(null,...i))})}),()=>{T(()=>{s&&k(a(...s),r)&&f(null,...s)})}}),r}export{x as b};
