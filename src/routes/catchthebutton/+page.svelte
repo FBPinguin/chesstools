@@ -1,4 +1,7 @@
 <script>
+	import { chal } from "$lib/store.js";
+
+	let target = $state(1)
     let w = $state();
     let h = $state();
     import { elasticOut } from 'svelte/easing';
@@ -25,9 +28,16 @@
     {#if caught}
     <div class="text-9xl absolute bottom-1/2 left-1/3" style="margin:auto" in:spin={{ duration: 8000 }}>YOU WIN!!!</div>
     {/if}
-<button style="position: relative; left: 20px; top: 40px;" aria-label="target" onclick={() => caught = true} onpointerentercapture={(e) => {
+{#each {length: target} as _,i}
+<button style="position: relative; left: {Math.random()*w}px; top: {Math.random()*h}px;" aria-label="target" onclick={() => {caught = true; $chal.chal1 = true}} onload={() => { 
+	console.log(1)
+    e.target.style.left=`${Math.random()*w}px`;
+    e.target.style.top=`${Math.random()*h}px`;
+   }} onpointerentercapture={(e) => {
    setTimeout(() => {
+	target = target + 1;
     e.target.style.left=`${Math.random()*w}px`;
     e.target.style.top=`${Math.random()*h}px`;
    }, 200); }}><img class="object-scale-down h-10 w-10" alt="target" src={caught ? "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.vectorstock.com%2Fi%2F1000x1000%2F75%2F71%2Fa-sad-crying-emoticon-smiley-face-character-vector-6147571.jpg&f=1&nofb=1&ipt=b0efa4c6206538f439550903e6180efbb2a6aa3b93e5a8409300f0d6d9dda124&ipo=images" : "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.YzTpUZF_qVIVnhjtS4XOygHaHa%26pid%3DApi&f=1&ipt=0e4dee67442a4ec865673100a8414559e584de6dd4f9b072a141f63797ba99f0&ipo=images"}/></button>
+{/each}
 </div>
