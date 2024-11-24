@@ -1,0 +1,1 @@
+import{e as t,h as S,u as k,S as q,q as T}from"./runtime.DLNDJtKJ.js";function h(r,i){return r===i||(r==null?void 0:r[q])===i}function A(r={},i,a,c){return t(()=>{var f,s;return S(()=>{f=s,s=[],k(()=>{r!==a(...s)&&(i(r,...s),f&&h(a(...f),r)&&i(null,...f))})}),()=>{T(()=>{s&&h(a(...s),r)&&i(null,...s)})}}),r}export{A as b};
